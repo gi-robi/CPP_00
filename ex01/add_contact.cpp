@@ -1,35 +1,40 @@
 #include <iostream>
 #include "phone_book.hpp"
 
-void add_contact(PhoneBook& phone_book)
+// 1 if the input is an "add" command -> run function to collect user input
+// 2 create a new instance of Contact containing the input information
+// 3 call PhoneBook->add_contact(contact) by passing contact
+
+void PhoneBook::add_contact(Contact contact)
 {
-    Contacts contact;
-    
-    fill_contact(contact);
-    if (phone_book.number_of_contacts < 8) //put the 8 in a const??
+    if (this->number_of_contacts < 8) //put the 8 in a const??
     {
-        phone_book.last_contact_index++;
-        phone_book.contacts[phone_book.last_contact_index] = contact;
-        phone_book.number_of_contacts++;
+        this->last_contact_index++;
+        this->contacts[this->last_contact_index] = contact;
+        this->number_of_contacts++;
     }
     else
-        replace_contact(phone_book, contact);
+        this->replace_contact(contact);
 }
 
-void replace_contact(PhoneBook& phone_book, Contacts contact)
+void PhoneBook::replace_contact(Contact contact)
 {
     int replace_index;
     
-    replace_index = (phone_book.last_contact_index + 1) % 8; //put the 8 in a const??
-    phone_book.contacts[replace_index] = contact;
-    phone_book.last_contact_index = replace_index;
+    replace_index = (this->last_contact_index + 1) % max_contacts; //put the 8 in a const??
+    this->contacts[replace_index] = contact;
+    this->last_contact_index = replace_index;
 }
 
-void fill_contact(Contacts& contact)
+Contact create_contact()
 {
+    Contact contact;
+
     contact.first_name = get_input("Enter first name: ");
     contact.last_name = get_input("Enter last name: ");
     contact.nickname = get_input("Enter last name: ");
     contact.phone_number = get_input("Enter phone number: ");
     contact.darkest_secret = get_input("Enter darkest secret: ");
+
+    return contact;
 }

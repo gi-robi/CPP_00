@@ -18,17 +18,23 @@ int is_valid_input(std::string input)
     return (0);
 }
 
-void invalid_input_message()
+void print_message(std::string message)
 {
-    std::cout << "Invalid command." << std::endl;
+    std::cout << message << std::endl;
 }
 
 void process_input(std::string input, PhoneBook& phone_book)
 {
     if (input == exit_program)
+    {
         exit (0); //maybe put it in a function that also print exit message
+        print_message("Exit Phonebook");
+    }
     if (input == add)
-        add_contact(phone_book);
+    {
+        const Contact contact = create_contact();
+        phone_book.add_contact(contact);
+    }
     else if (input == search)
         search_contact(phone_book);
 }

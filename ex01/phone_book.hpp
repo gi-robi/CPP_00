@@ -4,7 +4,7 @@
 #include <iostream>
 
 //classes
-class Contacts
+class Contact
 {
     public:
     std::string first_name;
@@ -17,34 +17,48 @@ class Contacts
 class PhoneBook
 {
     public:
-    Contacts contacts[8];
+    
+    Contact contacts[8];
     int number_of_contacts;
     int last_contact_index;
-    //function to add contact
-    //function to search
-    //function to exit
+    const int max_contacts = 8;
+
+    PhoneBook(int number_of_contacts, int last_contact_index);
+    
+    //add contact
+    void add_contact(Contact contact);
+
+    //search contact
+    Contact* get_contacts();
+    Contact get_contact_at_index(int index); // returns contact at index
+
+    private: 
+    //search contact
+    void replace_contact(Contact contact);
 };
 
-//constants
-const int max_contacts = 8;
+class ContactPrinter
+{
+    public:
+
+    void print_one(Contact contact);
+    void print_all(const Contact* contacts);
+};
+
+//handle input
 const std::string add = "ADD";
 const std::string search = "SEARCH";
 const std::string exit_program = "EXIT"; 
 
-//handle input
 std::string get_input(std::string prompt);
 int is_valid_input(std::string input);
-void invalid_input_message();
+void print_message(std::string message);
 void process_input(std::string input, PhoneBook& phone_book);
 
 //add contact
-void add_contact(PhoneBook& phone_book);
-void replace_contact(PhoneBook& phone_book, Contacts contact);
-void fill_contact(Contacts& contact);
+Contact create_contact();
 
 //search contact
 void search_contact(PhoneBook phone_book);
-void display_contacts(PhoneBook phone_book);
-void display_one_contact(Contacts contact);
 
 #endif

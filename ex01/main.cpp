@@ -1,13 +1,16 @@
 #include <iostream>
 #include "phone_book.hpp"
 
+PhoneBook::PhoneBook(int number_of_contacts, int last_contact_index)
+{
+    this->number_of_contacts = number_of_contacts;
+    this->last_contact_index = last_contact_index;
+}
+
 int main(void)
 {
-    PhoneBook phone_book;
+    PhoneBook phone_book(0, -1);
     std::string input;
-
-    phone_book.number_of_contacts = 0;
-    phone_book.last_contact_index = -1;
     
     while (1)
     {
@@ -15,7 +18,7 @@ int main(void)
         if (is_valid_input(input))
             process_input(input, phone_book);
         else
-            invalid_input_message();
+            print_message("Invalid input");
         
     }
 }
