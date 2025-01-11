@@ -21,7 +21,7 @@ class PhoneBook
     Contact contacts[8];
     int number_of_contacts;
     int last_contact_index;
-    const int max_contacts = 8;
+    static const int max_contacts = 8;
 
     PhoneBook(int number_of_contacts, int last_contact_index);
     
@@ -42,7 +42,7 @@ class ContactPrinter
     public:
 
     void print_one(Contact contact);
-    void print_all(const Contact* contacts);
+    void print_all(const Contact* contacts, int number_of_contacts);
 };
 
 //handle input

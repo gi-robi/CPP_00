@@ -32,7 +32,7 @@ Contact create_contact()
 
     contact.first_name = get_input("Enter first name: ");
     contact.last_name = get_input("Enter last name: ");
-    contact.nickname = get_input("Enter last name: ");
+    contact.nickname = get_input("Enter nickname: ");
     contact.phone_number = get_input("Enter phone number: ");
     contact.darkest_secret = get_input("Enter darkest secret: ");
 

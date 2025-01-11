@@ -1,6 +1,11 @@
 #include <iostream>
 #include "phone_book.hpp"
 
+void print_message(std::string message)
+{
+    std::cout << message << std::endl;
+}
+
 PhoneBook::PhoneBook(int number_of_contacts, int last_contact_index)
 {
     this->number_of_contacts = number_of_contacts;
