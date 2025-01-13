@@ -1,5 +1,7 @@
 #include <iostream>
-#include "phone_book.hpp"
+#include "handle_input.hpp"
+#include "ContactPrinter.hpp"
+#include "Contact.hpp"
 
 std::string formatColumn(const std::string& text, int width)
 {
@@ -38,4 +40,9 @@ void ContactPrinter::print_one(Contact contact)
     std::cout << "Nickname: " << contact.nickname << std::endl;
     std::cout << "Phone number: " << contact.phone_number << std::endl;
     std::cout << "Darkest secret: " << contact.darkest_secret << std::endl;
+}
+
+void print_message(std::string message)
+{
+    std::cout << message << std::endl;
 }

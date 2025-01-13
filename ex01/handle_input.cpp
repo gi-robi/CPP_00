@@ -1,5 +1,8 @@
 #include <iostream>
-#include "phone_book.hpp"
+#include "handle_input.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
+#include "ContactPrinter.hpp"
 
 std::string get_input(std::string prompt)
 {

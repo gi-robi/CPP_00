@@ -1,9 +1,7 @@
 #include <iostream>
-#include "phone_book.hpp"
-
-// 1 if the input is an "add" command -> run function to collect user input
-// 2 create a new instance of Contact containing the input information
-// 3 call PhoneBook->add_contact(contact) by passing contact
+#include "handle_input.hpp"
+#include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 void PhoneBook::add_contact(Contact contact)
 {

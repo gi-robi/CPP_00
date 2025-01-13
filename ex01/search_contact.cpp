@@ -1,5 +1,8 @@
 #include <iostream>
-#include "phone_book.hpp"
+#include "handle_input.hpp"
+#include "Contact.hpp"
+#include "PhoneBook.hpp"
+#include "ContactPrinter.hpp"
 
 Contact PhoneBook::get_contact_at_index(int index)
 {
