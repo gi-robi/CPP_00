@@ -1,7 +1,7 @@
 NAME = phonebook
 CXX = c++                  
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SOURCES = main.cpp constructor.cpp handle_input.cpp Contact.cpp add_contact.cpp search_contact.cpp contact_printer.cpp
+SOURCES = main.cpp constructor.cpp handle_input.cpp Contact.cpp add_contact.cpp search_contact.cpp ContactPrinter.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 HEADERS = handle_input.hpp PhoneBook.hpp Contact.hpp ContactPrinter.hpp
 
