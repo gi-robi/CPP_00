@@ -12,24 +12,28 @@ std::string trim_spaces(std::string str)
         return (str.substr(start, end - start + 1));
 }
 
-void to_upper(std::string str)
+char toupper(char c)
 {
-    int i = 0;
-
-    while (str[i])
-    {
-        std::cout << static_cast<char>(std::toupper(static_cast<char>(str[i])));
-        i++;
-    }
+    if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
 
 void print_strings(int argc, char **argv)
 {
     int i = 1;
+    int j;
+    std::string string;
 
     while (i < argc)
     {
-        to_upper(trim_spaces(std::string(argv[i])));
+        j = 0;
+        string = trim_spaces(argv[i]);
+        while (string[j])
+        {   
+            std::cout << toupper(string[j]);
+            j++;
+        }
         if (i < argc)
             std::cout << ' ';
         i++;
