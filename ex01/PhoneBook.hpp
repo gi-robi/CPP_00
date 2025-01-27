@@ -16,7 +16,7 @@ class PhoneBook
 
     public:
 
-    PhoneBook(int number_of_contacts, int last_contact_index); //constructor
+    PhoneBook(int number_of_contacts, int last_contact_index);
     
     static const int max_contacts = 8;
     
