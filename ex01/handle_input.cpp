@@ -10,7 +10,8 @@ std::string get_input(std::string prompt)
 
     std::cout << prompt;
     getline(std::cin, input);
-
+	if (std::cin.eof())
+		exit(1);
     return (input);
 }
 
