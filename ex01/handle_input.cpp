@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_input.cpp                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rgiambon <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/01/27 11:24:01 by rgiambon          #+#    #+#             */
+/*   Updated: 2025/01/27 12:13:50 by rgiambon         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
+#include <stdlib.h>
 #include "handle_input.hpp"
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
@@ -32,7 +45,12 @@ void process_input(std::string input, PhoneBook& phone_book)
     }
     if (input == add)
     {
-        const Contact contact = create_contact();
+        const Contact contact = create_contact(); 
+		if (contact.get_first_name() == "unknown")
+		{
+			print_message("Contact field can't be empty.");
+			return ;
+		}
         phone_book.add_contact(contact);
     }
     else if (input == search)

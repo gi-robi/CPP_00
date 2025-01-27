@@ -9,6 +9,7 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o $@ $^
+	chmod +x $(NAME)
 
 %.o: %.cpp Makefile $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
