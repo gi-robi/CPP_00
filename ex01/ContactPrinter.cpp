@@ -44,7 +44,7 @@ void ContactPrinter::print_all(const Contact* contacts, int number_of_contacts)
     std::cout << std::string(4 * (columnWidth + 1), '-') << std::endl;
 
     for (int i = 0; i < number_of_contacts; ++i) {
-        std::cout << "|" << formatColumn(to_string(i), columnWidth) << "|"
+        std::cout << "|" << formatColumn(to_string(i + 1), columnWidth) << "|"
              << formatColumn(contacts[i].get_first_name(), columnWidth) << "|"
              << formatColumn(contacts[i].get_last_name(), columnWidth) << "|"
              << formatColumn(contacts[i].get_nickname(), columnWidth) << "|" << std::endl;

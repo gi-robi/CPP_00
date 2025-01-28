@@ -20,10 +20,10 @@
 Contact PhoneBook::get_contact_at_index(int index)
 {
     
-    if (index < 0 || index >= max_contacts || index >= this->number_of_contacts)
+    if (index < 1 || index > max_contacts || index > this->number_of_contacts)
     {
         Contact unknown;
-        unknown.get_first_name() = "unknown";
+        unknown.set_first_name("unknown");
         return (unknown);
     }
     return (this->contacts[index]);
